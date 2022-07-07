@@ -41,6 +41,12 @@ class ForthGenerator:
     def traverse_aform(self):
         self.aform = self.aform.content
 
+    def get_current_counter(self):
+        return self.count_obj
+
+    def set_current_counter(self, num):
+        self.count_obj = num
+
     def replace_form_and_model(self, form, model):
         temp_node = self.awkward_model
         temp_node_top = self._prev_node

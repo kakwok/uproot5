@@ -291,6 +291,8 @@ class AsObjects(uproot.interpretation.Interpretation):
                     container[elem] = self._forth_vm.vm.output_Index64(elem)
                 else:
                     container[elem] = self._forth_vm.vm.output_NumpyArray(elem)
+            print(numpy.frombuffer(container["part0-node0-data"], numpy.uint8))
+            print("==================================================")
             output = awkward.from_buffers(self._form, len(byte_offsets) - 1, container)
         self.hook_after_basket_array(
             data=data,
